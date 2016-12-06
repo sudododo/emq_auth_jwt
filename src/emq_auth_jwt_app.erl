@@ -1,5 +1,4 @@
 -module(emq_auth_jwt_app).
-
 -behaviour(application).
 
 %% Application callbacks
