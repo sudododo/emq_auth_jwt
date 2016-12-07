@@ -8,7 +8,7 @@
 
 -define(UNDEFINED(S), (S =:= undefined orelse S =:= <<>>)).
 
--define(SECRET, <<"password">>).
+-define(SECRET, <<"secret">>).
 
 init(Opts) -> {ok, Opts}.
 
