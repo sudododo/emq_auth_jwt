@@ -7,8 +7,8 @@
 
 start(_StartType, _StartArgs) ->
     {ok, Sup} = emq_auth_jwt_sup:start_link(),
-    emqttd_access_control:register_mod(auth, emq_auth_jwt, Opts),
-    emqttd_access_control:register_mod(acl, emq_acl_jwt, Opts),
+    emqttd_access_control:register_mod(auth, emq_auth_jwt),
+    emqttd_access_control:register_mod(acl, emq_acl_jwt),
     {ok, Sup}.
 
 prep_stop(State) ->
