@@ -5,8 +5,6 @@
 %% Application callbacks
 -export([start/2, stop/1]).
 
--behaviour(supervisor).
-
 -define(APP, emq_auth_jwt).
 
 start(_StartType, _StartArgs) ->
