@@ -1,6 +1,6 @@
 -module(emq_acl_jwt).
 
--module(emqttd_acl_mod).
+-behaviour(emqttd_acl_mod).
 
 -include_lib("emqttd/include/emqttd.hrl").
 
