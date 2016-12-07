@@ -3,12 +3,12 @@
 -behaviour(application).
 
 %% Application callbacks
--export([start/2, stop/1]).
+-export([start/2, prep_stop/1, stop/1]).
 
 start(_StartType, _StartArgs) ->
     {ok, Sup} = emq_auth_jwt_sup:start_link(),
-    if_enabled(fun reg_authmod/0),
-    if_enabled(fun reg_aclmod/0),
+    emqttd_access_control:register_mod(auth, emq_auth_jwt, Opts),
+    emqttd_access_control:register_mod(acl, emq_acl_jwt, Opts),
     {ok, Sup}.
 
 prep_stop(State) ->
@@ -18,9 +18,3 @@ prep_stop(State) ->
 
 stop(_State) ->
     ok.
-
-reg_authmod() ->
-    emqttd_access_control:register_mod(auth, emq_auth_jwt, Opts).
-
-reg_aclmod() ->
-    emqttd_access_control:register_mod(acl, emq_acl_jwt, Opts).
