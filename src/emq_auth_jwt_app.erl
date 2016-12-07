@@ -24,5 +24,5 @@ stop(_State) ->
 reg_authmod() ->
     emqttd_access_control:register_mod(auth, emq_auth_jwt, Opts).
 
-reg_aclmod(AclQuery) ->
+reg_aclmod() ->
     emqttd_access_control:register_mod(acl, emq_acl_jwt, Opts).
