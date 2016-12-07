@@ -2,8 +2,6 @@
 
 -module(emqttd_acl_mod).
 
--include("emq_auth_jwt.hrl").
-
 -include_lib("emqttd/include/emqttd.hrl").
 
 %% ACL callbacks

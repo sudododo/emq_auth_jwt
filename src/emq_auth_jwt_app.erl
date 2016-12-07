@@ -1,7 +1,5 @@
 -module(emq_auth_jwt_app).
 
--include("emq_auth_jwt.hrl").
-
 -behaviour(application).
 
 %% Application callbacks
