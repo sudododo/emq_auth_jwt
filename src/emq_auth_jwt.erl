@@ -22,7 +22,7 @@ check(#mqtt_client{client_id = ClientId, username = Username}, Password, _Opts) 
         {error, invalid_token} -> io:format("invalid_token"), {error, "invalid_token"};
         {error, invalid_signature} -> io:format("invalid_signature"), {error, "invalid_signature"};
         {error, expired} -> io:format("invalid_signature"), {error, "invalid_signature"};
-        {ok, claimsJSON} -> io:format("claimsJSON"), {ok, "claimsJSON"};
+        {ok, claimsJSON} -> io:format("claimsJSON"), {ok, "claimsJSON"}
     end.
 
 description() -> "Auth jwt Module".
