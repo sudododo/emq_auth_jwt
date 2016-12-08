@@ -4,6 +4,8 @@
 
 -include_lib("emqttd/include/emqttd.hrl").
 
+-import(jwt, [decode/2]).
+
 -export([init/1, check/3, description/0]).
 
 -define(UNDEFINED(S), (S =:= undefined orelse S =:= <<>>)).
