@@ -21,6 +21,7 @@ check(#mqtt_client{client_id = ClientId, username = Username}, Password, _Opts) 
     io:format("Auth jwt: clientId=~p, username=~p, password=~p~n",
               [ClientId, Username, Password]),
     {ok, Claims} = jwt:decode(Password, ?SECRET),
+    io:format("Claims=~p~n", Claims),
     ok.
     % case jwt:decode(Password, ?SECRET) of
     %     {error, invalid_token} -> io:format("invalid_token"), {error, "invalid_token"};
