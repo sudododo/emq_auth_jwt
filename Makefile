@@ -2,6 +2,9 @@ PROJECT = emq_auth_jwt
 PROJECT_DESCRIPTION = emqtt auth jwt
 PROJECT_VERSION = 2.0.1
 
+DEPS = jwt
+dep_jwt = git https://github.com/artemeff/jwt master
+
 BUILD_DEPS = emqttd
 dep_emqttd = git https://github.com/emqtt/emqttd master
 
